@@ -1,6 +1,6 @@
 hardWayPython
 =============
 
-All my <learning python the hard way> project
+All my 'learning python the hard way' project
 
 Think I will going through it~
