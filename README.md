@@ -3,7 +3,7 @@ hardWayPython
 
 All my 'learning python the hard way' project
 
-my blog is <a href="grockcharger.github.io">this<a/>
+my blog is [this](grockcharger.github.io) 
 
 Thank you for watching
 
