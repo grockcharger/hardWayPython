@@ -13,12 +13,12 @@ def sort_words(words):
 def print_first_word(words):
 	"""Prints the first word after poppint it"""
 	word = words.pop(0)
-	return word
+	print word
 
 def print_last_word(words):
 	"""Prints the last word after popping it"""
 	word = words.pop(-1)
-	return word
+	print word
 
 def sort_sentence(sentence):
 	"""Takes in a full sentence and returns the sorted words"""
