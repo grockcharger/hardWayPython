@@ -1,22 +1,63 @@
 # By guoshu 
-# 2014/7/18 11:53
+# 2014/7/18 10:47
 
-class Song(object):
-	
-	def __init__(self, lyrics):
-		self.lyrics = lyrics
+# create a mapping of state to abbreviation
+states = {
+'Oregon':'OR',
+'Florida':'FL',
+'California':'CA',
+'New York':'NY',
+'Michigan':'MI'
+}
 
-	def sing_me_a_song(self):
-		for line in self.lyrics:
-			print line
+# create a basic ste of states and some cities in them
+cities = {
+'CA':'San Francisco',
+'MI':'Detroit',
+'FL':'Jacksonville'
+}
 
-happy_bday = Song(["Happy birthday to you",
-		   "I don't want to get sued",
-		   "So I'll stop right there"])
+# add some more cities
+cities['NY'] = 'New York'
+cities['OR'] = 'Portland'
 
-bulls_on_parade = Song(["They really aroung the family",
-			"With pockets full of shells"])
+# print out some cities
+print '-' * 10
+print "NY States has:", cities['NY']
+print "OR States has:", cities['OR']
 
-happy_bday.sing_me_a_song()
+# print some states
+print '-' * 10
+print "Michigan's abbreviation is:", states['Michigan']
+print "Florida's abbreviatioin is:", states['Florida']
 
-bulls_on_parade.sing_me_a_song()
+# do it by using the state then cities dict
+print '-' * 10
+print "Michigan has:", cities[states['Michigan']]
+print "Florida has:", cities[states['Florida']]
+
+# print every states abbreviation
+print '-' * 10
+for state, abbre in states.items():
+	print "%s is abbreviated %s" % (state, abbre)
+
+# print every city in state
+print '-' * 10
+for abbre, city in cities.items():
+	print "%s has the city %s" % (abbre, city)
+
+# now do both the same time
+print '-' * 10
+for state, abbrev in states.items():
+	print " %s state is abbreviated %s and has the city %s" % (state, abbrev, cities[abbrev])
+print '-' * 10
+
+# safely get a abbreviation by state that might not be there
+state = states.get('Texas',None)
+
+if not state:
+	print "Sorry, no Texas."
+
+# get a city with a default value
+city = cities.get('TX', 'Does Not Exist')
+print "The city for the state 'TX' is: %s" % city
