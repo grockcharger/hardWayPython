@@ -1,63 +1,25 @@
 # By guoshu 
-# 2014/7/18 10:47
+# 2014/7/18 21:35
 
-# create a mapping of state to abbreviation
-states = {
-'Oregon':'OR',
-'Florida':'FL',
-'California':'CA',
-'New York':'NY',
-'Michigan':'MI'
-}
+ten_things = "Apples Oranges Crows Telephone Light Sugar"
 
-# create a basic ste of states and some cities in them
-cities = {
-'CA':'San Francisco',
-'MI':'Detroit',
-'FL':'Jacksonville'
-}
+print "Wait there's not 10 things in that list, let's fix that."
 
-# add some more cities
-cities['NY'] = 'New York'
-cities['OR'] = 'Portland'
+stuff = ten_things.split(' ')
+more_stuff = ["Day","Night","Song","Frisbee","Corn","Banana","Girl","Boy"]
 
-# print out some cities
-print '-' * 10
-print "NY States has:", cities['NY']
-print "OR States has:", cities['OR']
+while len(stuff) != 10:
+	next_one = more_stuff.pop()
+	print "Adding:", next_one
+	stuff.append(next_one)
+	print "There's %d items now", len(stuff)
 
-# print some states
-print '-' * 10
-print "Michigan's abbreviation is:", states['Michigan']
-print "Florida's abbreviatioin is:", states['Florida']
+print "There we go:", stuff
 
-# do it by using the state then cities dict
-print '-' * 10
-print "Michigan has:", cities[states['Michigan']]
-print "Florida has:", cities[states['Florida']]
+print "Let's do some things with stuff."
 
-# print every states abbreviation
-print '-' * 10
-for state, abbre in states.items():
-	print "%s is abbreviated %s" % (state, abbre)
-
-# print every city in state
-print '-' * 10
-for abbre, city in cities.items():
-	print "%s has the city %s" % (abbre, city)
-
-# now do both the same time
-print '-' * 10
-for state, abbrev in states.items():
-	print " %s state is abbreviated %s and has the city %s" % (state, abbrev, cities[abbrev])
-print '-' * 10
-
-# safely get a abbreviation by state that might not be there
-state = states.get('Texas',None)
-
-if not state:
-	print "Sorry, no Texas."
-
-# get a city with a default value
-city = cities.get('TX', 'Does Not Exist')
-print "The city for the state 'TX' is: %s" % city
+print stuff[1]
+print stuff[-1] # whoa! fancy
+print stuff.pop()
+print ' '.join(stuff) # what? cool!
+print '#'.join(stuff[3:5]) # super stellar!
